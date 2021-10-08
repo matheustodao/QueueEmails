@@ -13,3 +13,8 @@
 
 ## <b>API consumida</b>
 - > [Vtex Store](https://developers.vtex.com/vtex-rest-api/reference/search-3#productsearchfilteredandordered)
+
+<br />
+
+# <b>Docker</b>
+- docker run --name redis -p 6379:6379 -d -t redis:alpine
