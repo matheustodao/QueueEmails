@@ -13,11 +13,13 @@ module.exports = {
   add(name, data) {
     const queue = this.queues.find((queue) => queue.name.toLowerCase() === name.toLowerCase());
 
+    // Add mail queue <-> Adiciona o e-mail na fila de espera
     return queue.bull.add(data);
   },
 
   process() {
     return this.queues.forEach((queue) => {
+      // Process queue <--> Processa fila de espera
       queue.bull.process(queue.handle);
 
       queue.bull.on('failed', (job, error) => {
